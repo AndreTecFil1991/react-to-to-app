@@ -49,6 +49,6 @@ div.note>textarea {
 }
 
 .right-board>.board>div.note {
-    background-color: rgb(53, 32, 248);
+    background-color: yellowgreen;
     z-index: 1000;
 }
