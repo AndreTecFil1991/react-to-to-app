@@ -56,7 +56,8 @@ class Board extends React.Component {
     let time = null;
     if (scope.props.name === "rightBoard" && !note.time) {
       let date = new Date();
-      time = date.getHours() + ":" + date.getMinutes();
+      let minutes = date.getMinutes();
+      time = date.getHours() + ":" + (minutes < 10 ? '0' + minutes : minutes);
     }
     return (
       <Note
