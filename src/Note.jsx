@@ -59,20 +59,25 @@ class Note extends React.Component {
     let visibilityControl = "visible";
 
     if (this.props.board === "rightBoard") visibilityControl = "hidden";
+    
     return (
       <Draggable>
         <div className="note" style={this.style}>
-          <p>{this.props.children}</p>
+          <p>
+            {this.props.children}
+            <br />
+            {this.props.time}
+          </p>
           <span>
             <button
               onClick={this.checked.bind(this)}
               className="btn btn-sm btn-success glyphicon glyphicon-ok"
-              style={{visibility: visibilityControl}}
+              style={{ visibility: visibilityControl }}
             />
             <button
               onClick={this.edit.bind(this)}
               className="btn btn-sm btn-primary glyphicon glyphicon-pencil"
-              style={{visibility: visibilityControl}}
+              style={{ visibility: visibilityControl }}
             />
             <button
               onClick={this.remove.bind(this)}

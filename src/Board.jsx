@@ -45,7 +45,7 @@ class Board extends React.Component {
 
   componentDidMount() {
     var self = this;
-    if (this.props.count) {
+    if (this.props.tasks) {
       this.props.tasks.forEach(function(task) {
         self.add(task);
       });
@@ -53,6 +53,12 @@ class Board extends React.Component {
   }
 
   eachNote(note, i, scope) {
+    let time = null;
+    if (scope.props.name === "rightBoard" && !note.time) {
+      let date = new Date();
+      time = date.getHours() + ":" + date.getMinutes();
+    }
+
     return (
       <Note
         key={note.id}
@@ -61,6 +67,7 @@ class Board extends React.Component {
         onRemove={scope.remove}
         onCheck={scope.onCheck}
         board={scope.props.name}
+        time={time}
       >
         {note.note}
       </Note>
@@ -87,7 +94,11 @@ class Board extends React.Component {
 
   renderWithoutButtonToAdd() {
     let notes = this.mapNotes();
-    return <div className="board" id={this.props.id}>{notes}</div>;
+    return (
+      <div className="board" id={this.props.id}>
+        {notes}
+      </div>
+    );
   }
 
   render() {
