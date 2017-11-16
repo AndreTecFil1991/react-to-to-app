@@ -34,6 +34,7 @@ class BoardContainer extends React.Component {
     return (
       <Board
         tasks={Tasks}
+        count={Tasks.length}
         addButton={true}
         name="leftBoard"
         movenote={this.moveNote.bind(this)}
@@ -46,6 +47,7 @@ class BoardContainer extends React.Component {
   getRightBoard() {
     return (
       <Board
+        count={0}
         addButton={false}
         name="rightBoard"
         notes={this.state.board2}
