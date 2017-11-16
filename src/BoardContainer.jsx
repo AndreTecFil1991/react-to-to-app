@@ -30,7 +30,7 @@ class BoardContainer extends React.Component {
     });
   }
 
-  getBoard1() {
+  getLeftBoard() {
     return (
       <Board
         tasks={Tasks}
@@ -39,29 +39,37 @@ class BoardContainer extends React.Component {
         name="leftBoard"
         movenote={this.moveNote.bind(this)}
         notes={this.state.board1}
+        id="left-container"
       />
     );
   }
 
-  getBoard2() {
+  getRightBoard() {
     return (
       <Board
         count={0}
         addButton={false}
         name="rightBoard"
         notes={this.state.board2}
+        id="right-container"
       />
     );
   }
 
   render() {
     return (
-      <div className="row-content">
-        <div className="col-sm-7" id="left-container">
-          {this.getBoard1()}
+      <div className="board-container">
+        <div className="left-board">
+          <div className="title" id="left-container-title">
+            <h4>TO DO List</h4>
+          </div>
+          {this.getLeftBoard()}
         </div>
-        <div className="col-sm-5" id="right-container">
-          {this.getBoard2()}
+        <div className="right-board">
+          <div className="title" id="right-container-title">
+            <h4>Already checked</h4>
+          </div>
+          {this.getRightBoard()}
         </div>
       </div>
     );

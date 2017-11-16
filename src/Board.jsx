@@ -75,7 +75,7 @@ class Board extends React.Component {
   renderWithButtonToAdd() {
     var notes = this.mapNotes();
     return (
-      <div className="board">
+      <div className="board" id={this.props.id}>
         {notes}
         <button
           className="btn btn-sm btn-success glyphicon glyphicon-plus"
@@ -87,7 +87,7 @@ class Board extends React.Component {
 
   renderWithoutButtonToAdd() {
     let notes = this.mapNotes();
-    return <div className="board">{notes}</div>;
+    return <div className="board" id={this.props.id}>{notes}</div>;
   }
 
   render() {

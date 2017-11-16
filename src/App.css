@@ -1,185 +1,105 @@
 @import url(http://fonts.googleapis.com/css?family=Shadows+Into+Light);
-body,
-html,
-div#react-container {
-    height: 100%;
-    overflow: hidden;
+* {
+  box-sizing: border-box;
+  width: 100%;
+  height: 100%;
 }
 
 body {
-    margin: 0;
-    padding: 0;
+  margin: 0;
+  padding: 0;
 }
 
-div.note {
-    height: 150px;
-    width: 150px;    
-    margin: 5px 5px;
-    position: absolute;
-    cursor: -webkit-grab;
-    -webkit-box-shadow: 5px 5px 15px 0 rgba(0, 0, 0, .2);
-    box-shadow: 5px 5px 15px 0 rgba(0, 0, 0, .2);
-}
-
-.col-sm-5>.board {
-    z-index: -100;
-}
-
-.col-sm-7>.board>div.note {
-    background-color: rgb(169, 245, 6);
-}
-
-.col-sm-5>.board>div.note {
-    background-color: rgb(53, 32, 248);
-}
-
-div.note:active {
-    cursor: -webkit-grabbing;
-}
-
-div.note p {
-    font-size: 22px;
-    padding: 5px;
-    font-family: "Shadows Into Light", Arial;
-}
-
-div.note:hover {
-    z-index: 9999;
-}
-
-div.note:hover>span {
-    opacity: 1;
-}
-
-div.note>span {
-    position: absolute;
-    bottom: 2px;
-    right: 2px;
-    opacity: 0;
-    transition: opacity .25s linear;
-}
-
-div.note>button {
-    margin: 2px;
-}
-
-div.note>textarea {
-    height: 70%;
-    background: rgba(255, 255, 255, .5);
-}
-
-* {
-    box-sizing: border-box;
-    width: 100%;
-    height: 100%;
-}
-
-h1,
 h2,
-h3,
-h4,
-h5,
-h6 {
-    margin-top: 10px;
-    margin-bottom: 10px;
-    margin-left: 10px;
+h4 {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  margin-left: 10px;
 }
 
-.col-sm-12 {
-    background-color: brown;
-    background: yellowgreen;
-    background: -moz-radial-gradient(center, ellipse cover, #D7E8D4 57%, yellowgreen 99%);
-    background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(57%, #D7E8D4), color-stop(99%, yellowgreen));
-    background: -webkit-radial-gradient(center, ellipse cover, #D7E8D4 57%, yellowgreen 99%);
-    background: -o-radial-gradient(center, ellipse cover, #D7E8D4 57%, yellowgreen 99%);
-    background: -ms-radial-gradient(center, ellipse cover, #D7E8D4 57%, yellowgreen 99%);
-    background: radial-gradient(ellipse at center, #D7E8D4 57%, yellowgreen 99%);
-    filter: progid: DXImageTransform.Microsoft.gradient(startColorstr='yellowgreen', endColorstr='#D7E8D4', GradientType=1);
-    display: flex;
-    flex: auto;
-    flex-direction: column;
-    width: 100%;
-    overflow-y: hidden;
-    overflow-x: hidden;
+header {
+  background: yellowgreen;
+  height: 80px;
+  padding: 1em;
 }
 
 .main-content {
-    display: flex;
-    flex-direction: column;
-    flex: 5;
+  display: flex;
+  flex-direction: column;
+  flex: auto;
 }
 
-.content-left {
-    display: flex;
-    flex-direction: row;
-    float: left;
-    min-height: 88%;
-    width: 60%;
+.row-content {
+  margin-top: 10px;
+  margin-left: 10px;
+  max-height: 75vh;
 }
 
-.content-left>h4 {
-    height: 2%;
+.left-board {
+  width: 60%;
 }
 
-.row-title {
+.right-board {
+  width: 40%;
+}
+
+.left-board>.title,
+.right-board>.title {
     margin-top: 10px;
     margin-left: 10px;
     max-height: 5vh;
 }
 
-.row-content {
-    margin-top: 10px;
-    margin-left: 10px;
-    max-height: 75vh;
-}
-
-.content-left>.inner-content-left {
-    flex-direction: column;
-    float: bottom;
-    display: flex;
-    min-height: 88%;
-}
-
-.content-right {
-    display: flex;
-    flex-direction: row;
-    float: right;
-    min-height: 88%;
-    width: 40%;
-}
-
-.content-right>h4 {
-    height: 2%;
-}
-
-.content-right>.inner-content-right {
-    display: flex;
-    flex-direction: column;
-    float: bottom;
-    min-height: 88%;
-}
-
-header {
-    background: yellowgreen;
-    height: 80px;
-}
-
 footer {
-    padding: 0.5em;
-    background: yellowgreen;
-    height: 40px;
-    text-align: center;
-    z-index: 0;
+  padding: 0.5em;
+  background: yellowgreen;
+  height: 40px;
+  text-align: center;
+  z-index: 0;
 }
 
-main {
-    overflow: auto;
-}
-
-header,
-main,
-article,
-details,
-nav {
-    padding: 1em;
+.board-container {
+  background-color: brown;
+  background: yellowgreen;
+  background: -moz-radial-gradient(
+    center,
+    ellipse cover,
+    #d7e8d4 57%,
+    yellowgreen 99%
+  );
+  background: -webkit-gradient(
+    radial,
+    center center,
+    0px,
+    center center,
+    100%,
+    color-stop(57%, #d7e8d4),
+    color-stop(99%, yellowgreen)
+  );
+  background: -webkit-radial-gradient(
+    center,
+    ellipse cover,
+    #d7e8d4 57%,
+    yellowgreen 99%
+  );
+  background: -o-radial-gradient(
+    center,
+    ellipse cover,
+    #d7e8d4 57%,
+    yellowgreen 99%
+  );
+  background: -ms-radial-gradient(
+    center,
+    ellipse cover,
+    #d7e8d4 57%,
+    yellowgreen 99%
+  );
+  background: radial-gradient(ellipse at center, #d7e8d4 57%, yellowgreen 99%);
+  filter: progid: DXImageTransform.Microsoft.gradient(startColorstr="yellowgreen", endColorstr="#D7E8D4", GradientType=1);
+  display: flex;
+  flex: auto;
+  flex-direction: row;
+  width: 100%;
+  overflow-y: hidden;
+  overflow-x: hidden;
 }
