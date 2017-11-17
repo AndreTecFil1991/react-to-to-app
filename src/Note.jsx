@@ -2,9 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom";
 import Draggable from "react-draggable";
 import { calculateBoardDimentions } from "./Calculations.js";
-
-var NoteMeasure =
-  Math.floor(Math.sqrt(Math.pow(150, 2) + Math.pow(150, 2))) * 1.25;
+import { NoteMeasure } from "./Calculations.js";
 
 class Note extends React.Component {
   edit() {
@@ -56,7 +54,8 @@ class Note extends React.Component {
       <Draggable>
         <div className="note" style={this.style}>
           <p>
-            {this.props.children}<br />
+            {this.props.children}
+            <br />
             {this.props.time}
           </p>
           <span>
