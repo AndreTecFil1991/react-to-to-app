@@ -17,16 +17,40 @@ class BoardContainer extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      board1: props.board1Data,
-      board2: props.board2Data
+      leftBoardNotes: props.leftBoardNotes,
+      rightBoardNotes: props.rightBoardNotes
     };
   }
 
   moveNote(note) {
-    this.state.board2.push(note);
+    this.state.rightBoardNotes.push(note);
     this.setState({
-      board1: this.state.board1,
-      board2: this.state.board2
+      leftBoardNotes: this.state.leftBoardNotes,
+      rightBoardNotes: this.state.rightBoardNotes
+    });
+  }
+
+  updateNoteState(note, state) {
+    let leftBoardNotes = this.state.leftBoardNotes;
+    leftBoardNotes.find(item => {
+      if (item.id === note.props.id) {
+        item.editing = state;
+      }
+      return item.id === note.props.id;
+    });
+
+    this.setState({
+      leftBoardNotes: leftBoardNotes,
+      rightBoardNotes: this.state.rightBoardNotes
+    });
+  }
+
+  updateBoardNotes(notes, boardName) {
+    this.setState({
+      leftBoardNotes:
+        boardName === "leftBoard" ? notes : this.state.leftBoardNotes,
+      rightBoardNotes:
+        boardName === "rightBoard" ? notes : this.state.rightBoardNotes
     });
   }
 
@@ -38,7 +62,9 @@ class BoardContainer extends React.Component {
         addButton={true}
         name="leftBoard"
         movenote={this.moveNote.bind(this)}
-        notes={this.state.board1}
+        updateNoteState={this.updateNoteState.bind(this)}
+        updateBoardNotes={this.updateBoardNotes.bind(this)}
+        notes={this.state.leftBoardNotes}
         id="left-container"
       />
     );
@@ -50,7 +76,8 @@ class BoardContainer extends React.Component {
         count={0}
         addButton={false}
         name="rightBoard"
-        notes={this.state.board2}
+        updateBoardNotes={this.updateBoardNotes.bind(this)}
+        notes={this.state.rightBoardNotes}
         id="right-container"
       />
     );

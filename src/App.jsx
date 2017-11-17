@@ -11,7 +11,7 @@ class App extends React.Component {
         <header id="pageHeader">
           <h2>My First React Page</h2>
         </header>
-        <BoardContainer board1Data={[]} board2Data={[]} />
+        <BoardContainer leftBoardNotes={[]} rightBoardNotes={[]} />
         <footer id="pageFooter">TecFil @2017</footer>
       </div>
     );

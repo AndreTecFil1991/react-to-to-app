@@ -7,13 +7,8 @@ var NoteMeasure =
   Math.floor(Math.sqrt(Math.pow(150, 2) + Math.pow(150, 2))) * 1.25;
 
 class Note extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = { editing: false };
-  }
-
   edit() {
-    this.setState({ editing: true });
+    this.props.updateState(this, true);
   }
 
   save() {
@@ -21,7 +16,7 @@ class Note extends React.Component {
       ReactDOM.findDOMNode(this.refs.newText).value,
       this.props.index
     );
-    this.setState({ editing: false });
+    this.props.updateState(this, false);
   }
 
   remove() {
@@ -47,8 +42,6 @@ class Note extends React.Component {
           leftContainerDimensions.height.end - NoteMeasure
         ) + "px"
     };
-
-    this.setState({ editing: false });
   }
 
   randomBetween(min, max) {
@@ -104,7 +97,7 @@ class Note extends React.Component {
   }
 
   render() {
-    if (this.state.editing) {
+    if (this.props.editing) {
       return this.renderForm();
     } else {
       return this.renderDisplay();
