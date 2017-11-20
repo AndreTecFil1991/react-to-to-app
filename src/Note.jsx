@@ -1,7 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import Draggable from "react-draggable";
-import PropTypes from "prop-types";
 import { calculateBoardDimentions } from "./Calculations.js";
 import { NoteMeasure } from "./Calculations.js";
 import { randomBetween } from "./Calculations.js";

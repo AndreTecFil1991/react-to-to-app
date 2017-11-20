@@ -5,7 +5,6 @@
   "dependencies": {
     "bootstrap": "^3.3.7",
     "bootstrap-sass-loader": "^1.0.10",
-    "prop-types": "^15.6.0",
     "react": "^16.1.1",
     "react-dom": "^16.1.1",
     "react-draggable": "^3.0.3",
