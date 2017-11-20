@@ -1,8 +1,10 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import Draggable from "react-draggable";
+import PropTypes from "prop-types";
 import { calculateBoardDimentions } from "./Calculations.js";
 import { NoteMeasure } from "./Calculations.js";
+import { randomBetween } from "./Calculations.js";
 
 class Note extends React.Component {
   edit() {
@@ -30,20 +32,16 @@ class Note extends React.Component {
     var leftContainerDimensions = calculateBoardDimentions(this.props.board);
     this.style = {
       left:
-        this.randomBetween(
+        randomBetween(
           leftContainerDimensions.width.start,
           leftContainerDimensions.width.end - NoteMeasure
         ) + "px",
       top:
-        this.randomBetween(
+        randomBetween(
           leftContainerDimensions.height.start,
           leftContainerDimensions.height.end - NoteMeasure
         ) + "px"
     };
-  }
-
-  randomBetween(min, max) {
-    return Math.floor(Math.random() * (max - min)) + min;
   }
 
   renderDisplay() {

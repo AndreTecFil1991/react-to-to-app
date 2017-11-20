@@ -36,8 +36,9 @@ class Board extends React.Component {
   }
 
   remove(index) {
+    this.props.notes.splice(index, 1)
     this.props.updateBoardNotes(
-      this.props.notes.splice(index, 1),
+      this.props.notes,
       this.props.name
     );
   }

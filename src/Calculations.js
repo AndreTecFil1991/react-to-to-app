@@ -43,3 +43,7 @@ export function calculateBoardDimentions(object) {
 
 export var NoteMeasure =
   Math.floor(Math.sqrt(Math.pow(150, 2) + Math.pow(150, 2))) * 1.25;
+
+export function randomBetween(min, max) {
+  return Math.floor(Math.random() * (max - min)) + min;
+}
