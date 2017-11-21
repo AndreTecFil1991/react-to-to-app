@@ -30,13 +30,13 @@ class BoardContainer extends React.Component {
     });
   }
 
-  updateNoteState(note, state) {
+  updateNoteState(noteId, state) {
     let leftBoardNotes = this.state.leftBoardNotes;
     leftBoardNotes.find(item => {
-      if (item.id === note.props.id) {
+      if (item.id === noteId) {
         item.editing = state;
       }
-      return item.id === note.props.id;
+      return item.id === noteId;
     });
 
     this.setState({

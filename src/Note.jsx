@@ -7,7 +7,7 @@ import { randomBetween } from "./Calculations.js";
 
 class Note extends React.Component {
   edit() {
-    this.props.updateState(this, true);
+    this.props.updateState(this.props.id, true);
   }
 
   save() {
@@ -15,7 +15,7 @@ class Note extends React.Component {
       ReactDOM.findDOMNode(this.refs.newText).value,
       this.props.index
     );
-    this.props.updateState(this, false);
+    this.props.updateState(this.props.id, false);
   }
 
   remove() {
