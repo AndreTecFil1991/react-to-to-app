@@ -1,9 +1,13 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import Draggable from "react-draggable";
-import { calculateBoardDimentions } from "./Calculations.js";
-import { NoteMeasure } from "./Calculations.js";
-import { randomBetween } from "./Calculations.js";
+import "./Glyphicon.css"
+import "./Note.css";
+import {
+  retrieveBoardDimensions,
+  NoteMeasure,
+  randomBetween
+} from "../js/Calculations.js";
 
 class Note extends React.Component {
   edit() {
@@ -28,17 +32,17 @@ class Note extends React.Component {
   }
 
   componentWillMount() {
-    var leftContainerDimensions = calculateBoardDimentions(this.props.board);
+    var boardDimensions = retrieveBoardDimensions(this.props.board);
     this.style = {
       left:
         randomBetween(
-          leftContainerDimensions.width.start,
-          leftContainerDimensions.width.end - NoteMeasure
+          boardDimensions.width.start,
+          boardDimensions.width.end - NoteMeasure
         ) + "px",
       top:
         randomBetween(
-          leftContainerDimensions.height.start,
-          leftContainerDimensions.height.end - NoteMeasure
+          boardDimensions.height.start,
+          boardDimensions.height.end - NoteMeasure
         ) + "px"
     };
   }

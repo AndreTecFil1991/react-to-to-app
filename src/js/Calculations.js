@@ -1,4 +1,9 @@
-export function calculateBoardDimentions(object) {
+const Boards = Object.freeze({
+  LEFTBOARD: "leftBoard",
+  RIGHTBOARD: "rightBoard"
+});
+
+export function retrieveBoardDimensions(board) {
   var leftContainer = document.getElementById("left-container");
   var rightContainer = document.getElementById("right-container");
   var clientHeight = window.innerHeight;
@@ -21,14 +26,14 @@ export function calculateBoardDimentions(object) {
   var containerTitle;
   var containerTitleHeight = 0;
 
-  if (object === "leftBoard" && leftContainer) {
+  if (board === Boards.LEFTBOARD && leftContainer) {
     containerTitle = document.getElementById("left-container-title");
     containerTitleHeight = containerTitle ? containerTitle.clientHeight : 0;
 
     containerDimensions.width.end = leftContainer.clientWidth;
   }
 
-  if (object === "rightBoard" && rightContainer) {
+  if (board === Boards.RIGHTBOARD && rightContainer) {
     containerTitle = document.getElementById("right-container-title");
     containerTitleHeight = containerTitle ? containerTitle.clientHeight : 0;
 

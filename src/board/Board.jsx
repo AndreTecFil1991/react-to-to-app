@@ -1,5 +1,5 @@
 import React from "react";
-import Note from "./Note.jsx";
+import Note from "../note/Note.jsx";
 
 class Board extends React.Component {
   constructor(props) {

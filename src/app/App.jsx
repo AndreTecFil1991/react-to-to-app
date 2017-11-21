@@ -1,8 +1,6 @@
 import React from "react";
 import "./App.css";
-import "./Glyphicon.css";
-import "./Note.css";
-import BoardContainer from './BoardContainer.jsx';
+import BoardContainer from "../boardcontainer/BoardContainer.jsx";
 
 class App extends React.Component {
   render() {

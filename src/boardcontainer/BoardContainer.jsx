@@ -1,5 +1,5 @@
 import React from "react";
-import Board from "./Board.jsx";
+import Board from "../board/Board.jsx";
 
 //mock data to feed the board with notes
 var Tasks = [
