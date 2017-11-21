@@ -1,14 +1,17 @@
 {
   "name": "react-to-do-app",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": "A todo web app made with reactjs.",
   "repository": {
     "type": "git",
     "url": "https://github.com/AndreTecFil1991/react-to-do-app"
   },
-  "author": "AndreTecFil1991 <andretecfil@gmail.com> (https://github.com/AndreTecFil1991)",
+  "author":
+    "AndreTecFil1991 <andretecfil@gmail.com> (https://github.com/AndreTecFil1991)",
   "homepage": "https://github.com/AndreTecFil1991/react-to-do-app",
   "private": false,
+  "license": "MIT",
+  "keywords": ["react", "components"],
   "dependencies": {
     "bootstrap": "^3.3.7",
     "bootstrap-sass-loader": "^1.0.10",
