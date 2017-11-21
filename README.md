@@ -64,7 +64,7 @@ To deploy the project build it's required to run the following command and wait 
 npm start
 ```
 
-Here is a [demo](https://andretecfil1991.github.io/reactWithCLI/) for the project to explore without all the installing and build process.
+Here is a [demo](https://andretecfil1991.github.io/react-to-to-app/) for the project to explore without all the installing and build process.
 
 ## Authors
 
@@ -74,4 +74,4 @@ See also the list of [contributors](https://github.com/AndreTecFil1991/react-to-
 
 ## License
 
-This project is licensed under the MIT License - see the [LICENSE.md](https://github.com/AndreTecFil1991/react-to-do-app/blob/master/LICENSE.md) file for details
+This project is licensed under the MIT License - see the [LICENSE.md](https://github.com/AndreTecFil1991/react-to-to-app/blob/master/LICENSE.md) file for details
